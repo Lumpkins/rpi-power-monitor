@@ -411,6 +411,7 @@ def run_main():
     
     while True:        
         try:
+
             board_voltage = get_board_voltage()    
             samples = collect_data(2000)
             poll_time = samples['time']            
@@ -583,7 +584,8 @@ def get_ip():
 
 
 if __name__ == '__main__':
-
+    print("Entered Main")
+    exit
     # Backup config.py file
     try:
         copyfile('config.py', 'config.py.backup')

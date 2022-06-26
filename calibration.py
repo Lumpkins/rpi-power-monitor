@@ -14,7 +14,7 @@ def rebuild_wave(samples, v_wave, PHASECAL):
     
 
     wave.append(v_wave[0])
-    previous_point = v_wave[0]
+    previous_point = v_wave[0] 
     
     for current_point in v_wave[1:]:
         new_point = previous_point + PHASECAL * (current_point - previous_point)
