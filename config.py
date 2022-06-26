@@ -16,14 +16,7 @@ GRID_VOLTAGE = 121.7
 # Using a multimeter, measure the output voltage of your AC transformer. Using the value on the label is not ideal and will lead to greater accuracy in the calculations.
 AC_TRANSFORMER_OUTPUT_VOLTAGE = 13.73
 
-# InfluxDB Settings
-db_settings = {
-    'host' : 'localhost',
-    'port' : 8086,
-    'username' : 'root',
-    'password' : 'password',
-    'database' : 'power_monitor'
-}
+
 
 
 # Define Variables
