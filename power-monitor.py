@@ -19,7 +19,7 @@ from textwrap import dedent
 from common import collect_data, readadc, recover_influx_container
 from shutil import copyfile
 
-
+from api_client import get_key
 
 # Tuning Variables
 
@@ -585,6 +585,7 @@ def get_ip():
 
 if __name__ == '__main__':
     print("Entered Main")
+    print(get_key())
     exit
     # Backup config.py file
     try:
