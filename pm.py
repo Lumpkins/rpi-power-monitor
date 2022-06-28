@@ -585,8 +585,7 @@ def get_ip():
 
 if __name__ == '__main__':
     print("Entered Main")
-    print(get_key())
-    exit
+
     # Backup config.py file
     try:
         copyfile('config.py', 'config.py.backup')
@@ -610,32 +609,8 @@ if __name__ == '__main__':
 
     if not MODE:
         # Try to establish a connection to the DB for 5 seconds:
-        x = 0
-        connection_established = False
-
-        key = get_key()
-
-        logger.info(f"... Trying to connect to database at: {db_settings['host']}:{db_settings['port']}")
-        while x < 5:
-            connection_established = infl.init_db()
-            if connection_established:
-                break
-            else:
-                sleep(1)
-                x += 1
-
-        if not connection_established:
-            if db_settings['host'] == 'localhost' or '127.0' in db_settings['host'] or get_ip() in db_settings['host']:
-                if recover_influx_container():
-                    infl.init_db()
-                    run_main()
-        
-            else:
-                logger.info(f"Could not connect to your remote database at {db_settings['host']}:{db_settings['port']}. Please verify connectivity/credentials and try again.")
-                sys.exit()
-
-        else:
-            run_main()
+ 
+        run_main()
 
     else:
         # Program launched in one of the non-main modes. Increase logging level.
@@ -774,17 +749,6 @@ if __name__ == '__main__':
             # This mode will read the sensors, perform the calculations, and print the wattage, current, power factor, and voltage to the terminal.
             # Data is stored to the database in this mode!
             logger.debug("... Starting program in terminal mode")
-            
-            connection_established = infl.init_db()
-            
-            if not connection_established:
-                # Check to see if the user's DB configuration points to this Pi:
-                if db_settings['host'] == 'localhost' or '127.0' in db_settings['host'] or get_ip() in db_settings['host']:
-                    recover_influx_container()
-                
-                else:
-                    logger.info("Could not connect to your remote database. Please verify this Pi can connect to your database and then try running the software again.")
-                    sys.exit()
             
             
             run_main()
