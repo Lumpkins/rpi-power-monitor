@@ -4,7 +4,6 @@ import timeit
 import csv
 from math import sqrt
 import sys
-import influx_interface as infl
 from datetime import datetime
 from plotting import plot_data
 import pickle
