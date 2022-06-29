@@ -8,11 +8,14 @@ def get_key():
     
 
 class ApiClient():
-    
+
     def __init__(self) -> None:
         self.ApiKey=get_key()
     
     def PutPMData(self,data):
+        print('Logging data to SQL')
+        print(data)
+        return
         url = r'https://192.168.1.201/PM/Put'
         headers = {'Accept': 'application/json'}
         auth = HTTPBasicAuth('ApiKey', get_key())

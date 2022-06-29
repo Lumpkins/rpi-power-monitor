@@ -18,7 +18,7 @@ from textwrap import dedent
 from common import collect_data, readadc
 from shutil import copyfile
 
-from api_client import get_key
+from api_client import ApiClient
 
 # Tuning Variables
 
@@ -395,6 +395,9 @@ def rebuild_waves(samples, PHASECAL_1, PHASECAL_2, PHASECAL_3, PHASECAL_4, PHASE
 def run_main():
     logger.info("... Starting Raspberry Pi Power Monitor")
     logger.info("Press Ctrl-c to quit...")
+
+    api=ApiClient()
+
     # The following empty dictionaries will hold the respective calculated values at the end of each polling cycle, which are then averaged prior to storing the value to the DB.
     solar_power_values = dict(power=[], pf=[], current=[])
     home_load_values = dict(power=[], pf=[], current=[])
@@ -517,20 +520,15 @@ def run_main():
             
             
             else:   # Calculate the average, send the result to InfluxDB, and reset the dictionaries for the next 2 sets of data.
-                infl.write_to_influx(
-                    solar_power_values,
-                    home_load_values,
-                    net_power_values, 
-                    ct1_dict,
-                    ct2_dict,
-                    ct3_dict,
-                    ct4_dict,
-                    ct5_dict,
-                    ct6_dict,
-                    poll_time,
-                    i,
-                    rms_voltages,
-                    )
+                data={'ct1':ct1_dict,
+                'ct2':ct2_dict,
+                'ct3':ct2_dict,
+                'ct4':ct2_dict,
+                'ct5':ct2_dict,
+                'ct6':ct2_dict}
+
+                api.PutPMData(data)
+
                 solar_power_values = dict(power=[], pf=[], current=[])
                 home_load_values = dict(power=[], pf=[], current=[])
                 net_power_values = dict(power=[], current=[])
@@ -555,7 +553,7 @@ def run_main():
             #sleep(0.1)
 
         except KeyboardInterrupt:
-            infl.close_db()
+            
             sys.exit()
 
 def print_results(results):
