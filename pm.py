@@ -551,7 +551,7 @@ def run_main():
                     t.add_row(['Voltage', round(results['voltage'], 3), '', '', '', '', ''])
                     s = t.get_string()
                     logger.debug('\n' + s)
-                time.sleep(10)
+                #time.sleep(10)
             #sleep(0.1)
 
         except KeyboardInterrupt:
