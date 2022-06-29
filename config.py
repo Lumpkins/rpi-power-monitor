@@ -14,7 +14,7 @@ logger.addHandler(ch)
 # Using a multimeter, measure the voltage of the receptacle where your 9V AC transformer will plug into. Enter the measured value below.
 GRID_VOLTAGE = 121.7
 # Using a multimeter, measure the output voltage of your AC transformer. Using the value on the label is not ideal and will lead to greater accuracy in the calculations.
-AC_TRANSFORMER_OUTPUT_VOLTAGE = 13.73
+AC_TRANSFORMER_OUTPUT_VOLTAGE = 8.64
 
 
 
