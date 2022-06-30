@@ -567,6 +567,8 @@ def print_results(results):
     t.add_row(['P.F.', round(results['ct1']['pf'], 3), round(results['ct2']['pf'], 3), round(results['ct3']['pf'], 3), round(results['ct4']['pf'], 3), round(results['ct5']['pf'], 3), round(results['ct6']['pf'], 3)])
     t.add_row(['Voltage', round(results['voltage'], 3), '', '', '', '', ''])
     s = t.get_string()
+
+    print(t)
     logger.debug(s)
 
 
