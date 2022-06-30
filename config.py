@@ -31,12 +31,12 @@ ct6_channel = 0             # 3.5mm Input #2        | Unused
 
 # The values from running the software in "phase" mode should go below!
 ct_phase_correction = {
-    'ct1' : 1,
+    'ct1' : -1,
     'ct2' : 1,
     'ct3' : 1,
     'ct4' : 1,
     'ct5' : 1,
-    'ct6' : 1,
+    'ct6' : -1,
 }
 
 # AFTER phase correction is completed, these values are used in the final calibration for accuracy. See the documentation for more information.
