@@ -529,7 +529,7 @@ def run_main():
                 'ct5':ct2_dict,
                 'ct6':ct2_dict}
 
-                api.PutPMData(data)
+                api.PutPMData(results)
 
                 print_results(data)
 
