@@ -531,6 +531,8 @@ def run_main():
 
                 api.PutPMData(data)
 
+                print_results(data)
+
                 solar_power_values = dict(power=[], pf=[], current=[])
                 home_load_values = dict(power=[], pf=[], current=[])
                 net_power_values = dict(power=[], current=[])
