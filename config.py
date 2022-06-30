@@ -20,23 +20,23 @@ AC_TRANSFORMER_OUTPUT_VOLTAGE = 8.64
 
 
 # Define Variables
-ct1_channel = 6             # Orange Pair           | House main (leg 1 - left)  (orange pair)
-ct2_channel = 7             # Green Pair            | House main (leg 2 - right) (green pair)
+ct1_channel = 4             # Orange Pair           | House main (leg 1 - left)  (orange pair)
+ct2_channel = 1             # Green Pair            | House main (leg 2 - right) (green pair)
 ct3_channel = 2             # Blue Pair             | Subpanel main (leg 1 - top)
 ct4_channel = 3             # Brown Pair            | Solar Power 
-ct5_channel = 1             # 3.5mm Input #1        | Subpanel main (leg 2 - bottom)
-board_voltage_channel =  4  # Board voltage ~3.3V
+ct5_channel = 6             # 3.5mm Input #1        | Subpanel main (leg 2 - bottom)
+board_voltage_channel =  0  # Board voltage ~3.3V
 v_sensor_channel = 5        # 9V AC Voltage channel
-ct6_channel = 0             # 3.5mm Input #2        | Unused
+ct6_channel = 7             # 3.5mm Input #2        | Unused
 
 # The values from running the software in "phase" mode should go below!
 ct_phase_correction = {
-    'ct1' : -1,
+    'ct1' : 1,
     'ct2' : 1,
     'ct3' : 1,
     'ct4' : 1,
     'ct5' : 1,
-    'ct6' : -1,
+    'ct6' : 1,
 }
 
 # AFTER phase correction is completed, these values are used in the final calibration for accuracy. See the documentation for more information.

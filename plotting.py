@@ -76,5 +76,5 @@ def plot_data(samples, title, *args, **kwargs):
         div += sample_rate
     
 
-    with open(f"{webroot}/{title.replace(' ', '_')}.html", 'w') as f:
+    with open(f"{title.replace(' ', '_')}.html", 'w') as f:
         f.write(div)
