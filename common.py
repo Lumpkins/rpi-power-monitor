@@ -17,6 +17,11 @@ def readadc(adcnum):
     # read SPI data from the MCP3008, 8 channels in total
     r = spi.xfer2([1, 8 + adcnum << 4, 0])
     data = ((r[1] & 3) << 8) + r[2]
+
+
+    print(data)
+
+    sleep(5)
     return data
 
 def collect_data(numSamples):
