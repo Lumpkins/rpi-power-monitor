@@ -395,6 +395,7 @@ def rebuild_waves(samples, PHASECAL_1, PHASECAL_2, PHASECAL_3, PHASECAL_4, PHASE
 
 
 def run_main():
+    print("Runn")
     logger.info("... Starting Raspberry Pi Power Monitor")
     logger.info("Press Ctrl-c to quit...")
 
