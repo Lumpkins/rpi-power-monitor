@@ -20,14 +20,15 @@ AC_TRANSFORMER_OUTPUT_VOLTAGE = 8.64
 
 
 # Define Variables
-ct1_channel = 4             # Orange Pair           | House main (leg 1 - left)  (orange pair)
-ct2_channel = 1             # Green Pair            | House main (leg 2 - right) (green pair)
-ct3_channel = 2             # Blue Pair             | Subpanel main (leg 1 - top)
-ct4_channel = 3             # Brown Pair            | Solar Power 
-ct5_channel = 6             # 3.5mm Input #1        | Subpanel main (leg 2 - bottom)
+ct1_channel = 6            # 3.5mm Input #1  
+        
+ct2_channel = 7             # 3.5mm Input #2           
+ct3_channel = 2             # Blue Pair             
+ct4_channel = 3             # Brown Pair           
+ct5_channel = 4              # Orange Pair 
 board_voltage_channel =  0  # Board voltage ~3.3V
 v_sensor_channel = 5        # 9V AC Voltage channel
-ct6_channel = 7             # 3.5mm Input #2        | Unused
+ct6_channel = 1              # Green Pair       
 
 # The values from running the software in "phase" mode should go below!
 ct_phase_correction = {
