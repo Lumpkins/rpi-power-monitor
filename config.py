@@ -42,8 +42,8 @@ ct_phase_correction = {
 
 # AFTER phase correction is completed, these values are used in the final calibration for accuracy. See the documentation for more information.
 accuracy_calibration = {
-    'ct1' : 1,
-    'ct2' : .952,
+    'ct1' : .97,
+    'ct2' : .97,
     'ct3' : 1,
     'ct4' : 1,
     'ct5' : 1,
