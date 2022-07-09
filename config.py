@@ -21,7 +21,7 @@ AC_TRANSFORMER_OUTPUT_VOLTAGE = 8.64
 
 # Define Variables
 ct1_channel = 6            # 3.5mm Input #1  
-        
+
 ct2_channel = 7             # 3.5mm Input #2           
 ct3_channel = 2             # Blue Pair             
 ct4_channel = 3             # Brown Pair           
@@ -32,8 +32,8 @@ ct6_channel = 1              # Green Pair
 
 # The values from running the software in "phase" mode should go below!
 ct_phase_correction = {
-    'ct1' : 1,
-    'ct2' : 1,
+    'ct1' : 1.04564589,
+    'ct2' : 1.13240952,
     'ct3' : 1,
     'ct4' : 1,
     'ct5' : 1,
