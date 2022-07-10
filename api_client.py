@@ -15,6 +15,7 @@ class ApiClient():
     def PutPMData(self,data):
         print('Logging data to SQL')
         
+        
         return
         url = r'https://192.168.1.201/PM/Put'
         headers = {'Accept': 'application/json'}
