@@ -340,7 +340,7 @@ def calculate_power(samples, board_voltage):
 
     return results
 
-def rebuild_waves(samples, PHASECAL_1, PHASECAL_2, PHASECAL_3, PHASECAL_4, PHASECAL_5, PHASECAL_6):
+def rebuild_waves(samples, PHASECAL_1, PHASECAL_2):#, PHASECAL_3, PHASECAL_4, PHASECAL_5, PHASECAL_6
 
     # The following empty lists will hold the phase corrected voltage wave that corresponds to each individual CT sensor.
     wave_1 = []
