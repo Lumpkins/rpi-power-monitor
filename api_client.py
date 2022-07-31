@@ -17,7 +17,7 @@ class ApiClient():
         self.batch_size=2
         self.current_batch=0
         self.batched_data=[]
-        self.auth = HTTPBasicAuth('ApiKe', get_key())
+        self.auth = HTTPBasicAuth('ApiKey', get_key())
     
     def PutPMData(self):
         print('Logging data to SQL')
@@ -27,7 +27,7 @@ class ApiClient():
         'User-Agent':'rpi-power-monitor',
         'Connection':'keep-alive',
         'Content-Type':'application/json',
-        'Host':'www.homeapi.net'}
+        'Host':'www.homeap.net'}
         
         json_str=json.dumps(self.batched_data,indent=4)
         print(json_str)
