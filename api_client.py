@@ -27,6 +27,7 @@ class ApiClient():
         'Host':'www.homeapi.net'}
         
         json_str=json.dumps(self.batched_data,indent=4)
+        print(json_str)
 
         res = requests.put(url, headers=headers, auth=self.auth, json=json_str)
         print(res.content)
