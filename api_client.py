@@ -24,7 +24,7 @@ class ApiClient():
 
         url = r'http://192.168.1.201/PM/Put'
         headers = {'Accept': 'application/json',
-        'HostName':'www.homeapi.net'}
+        'Host':'www.homeapi.net'}
         
         json_str=json.dumps(self.batched_data,indent=4)
 
