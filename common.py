@@ -26,35 +26,35 @@ def collect_data(numSamples):
     samples = []
     ct1_data = []
     ct2_data = []
-    ct3_data = []
-    ct4_data = []
-    ct5_data = []
-    ct6_data = []
+    # ct3_data = []
+    # ct4_data = []
+    # ct5_data = []
+    # ct6_data = []
     v_data = []
 
     for _ in range(numSamples):
         ct1 = readadc(ct1_channel)
-        ct5 = readadc(ct5_channel)
+        # ct5 = readadc(ct5_channel)
         ct2 = readadc(ct2_channel)
         v = readadc(v_sensor_channel)
-        ct3 = readadc(ct3_channel)
-        ct4 = readadc(ct4_channel)
-        ct6 = readadc(ct6_channel)
+        # ct3 = readadc(ct3_channel)
+        # ct4 = readadc(ct4_channel)
+        # ct6 = readadc(ct6_channel)
         ct1_data.append(ct1)
         ct2_data.append(ct2)
-        ct3_data.append(ct3)
-        ct4_data.append(ct4)
-        ct5_data.append(ct5)
-        ct6_data.append(ct6)
+        # ct3_data.append(ct3)
+        # ct4_data.append(ct4)
+        # ct5_data.append(ct5)
+        # ct6_data.append(ct6)
         v_data.append(v)    
     
     samples = {
         'ct1' : ct1_data,
         'ct2' : ct2_data,
-        'ct3' : ct3_data,
-        'ct4' : ct4_data,
-        'ct5' : ct5_data,
-        'ct6' : ct6_data,
+        # 'ct3' : ct3_data,
+        # 'ct4' : ct4_data,
+        # 'ct5' : ct5_data,
+        # 'ct6' : ct6_data,
         'voltage' : v_data,
         'time' : now,
     }

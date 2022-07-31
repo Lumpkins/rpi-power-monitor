@@ -396,7 +396,7 @@ def rebuild_waves(samples, PHASECAL_1, PHASECAL_2, PHASECAL_3, PHASECAL_4, PHASE
     return rebuilt_waves
 
 
-def run_main():
+def run_main(print=False):
     print("Runn")
     logger.info("... Starting Raspberry Pi Power Monitor")
     logger.info("Press Ctrl-c to quit...")
@@ -534,8 +534,8 @@ def run_main():
                 }
 
                 api.PutPMData(results)
-
-                print_results(results)
+                if(print):
+                    print_results(results)
 
                 solar_power_values = dict(power=[], pf=[], current=[])
                 home_load_values = dict(power=[], pf=[], current=[])
@@ -549,15 +549,15 @@ def run_main():
                 rms_voltages = []
                 i = 0
 
-                if logger.handlers[0].level == 10:
-                    t = PrettyTable(['', 'ct1', 'ct2'])#, 'ct3', 'ct4', 'ct5', 'ct6'])
-                    t.add_row(['Watts', round(results['ct1']['power'], 3), round(results['ct2']['power'], 3))#, round(results['ct3']['power'], 3), round(results['ct4']['power'], 3), round(results['ct5']['power'], 3), round(results['ct6']['power'], 3)])
-                    t.add_row(['Current', round(results['ct1']['current'], 3), round(results['ct2']['current'], 3))#, round(results['ct3']['current'], 3), round(results['ct4']['current'], 3), round(results['ct5']['current'], 3), round(results['ct6']['current'], 3)])
-                    t.add_row(['P.F.', round(results['ct1']['pf'], 3), round(results['ct2']['pf'], 3))#, round(results['ct3']['pf'], 3), round(results['ct4']['pf'], 3), round(results['ct5']['pf'], 3), round(results['ct6']['pf'], 3)])
-                    t.add_row(['Voltage', round(results['voltage'], 3), ''])#, '', '', '', ''])
-                    s = t.get_string()
-                    logger.debug('\n' + s)
-                #time.sleep(10)
+                # if logger.handlers[0].level == 10:
+                #     t = PrettyTable(['', 'ct1', 'ct2'])#, 'ct3', 'ct4', 'ct5', 'ct6'])
+                #     t.add_row(['Watts', round(results['ct1']['power'], 3), round(results['ct2']['power'], 3))#, round(results['ct3']['power'], 3), round(results['ct4']['power'], 3), round(results['ct5']['power'], 3), round(results['ct6']['power'], 3)])
+                #     t.add_row(['Current', round(results['ct1']['current'], 3), round(results['ct2']['current'], 3))#, round(results['ct3']['current'], 3), round(results['ct4']['current'], 3), round(results['ct5']['current'], 3), round(results['ct6']['current'], 3)])
+                #     t.add_row(['P.F.', round(results['ct1']['pf'], 3), round(results['ct2']['pf'], 3))#, round(results['ct3']['pf'], 3), round(results['ct4']['pf'], 3), round(results['ct5']['pf'], 3), round(results['ct6']['pf'], 3)])
+                #     t.add_row(['Voltage', round(results['voltage'], 3), ''])#, '', '', '', ''])
+                #     s = t.get_string()
+                #     logger.debug('\n' + s)
+                time.sleep(1)
             #sleep(0.1)
 
         except KeyboardInterrupt:
@@ -614,10 +614,12 @@ if __name__ == '__main__':
     else:
         MODE = None
 
-    if not MODE:
+    if not MODE or MODE=="print":
         # Try to establish a connection to the DB for 5 seconds:
- 
-        run_main()
+        if(MODE=="print"):
+            run_main(true)
+        else:
+            run_main()
 
     else:
         # Program launched in one of the non-main modes. Increase logging level.
