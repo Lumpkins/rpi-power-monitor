@@ -28,10 +28,8 @@ class ApiClient():
         
         json_str=json.dumps(self.batched_data,indent=4)
 
-        print(json_str)
-
         res = requests.get(url, headers=headers, auth=self.auth, json=json_str)
-        print(res.content)
+        print(res.text)
 
 
         #test if good or not
