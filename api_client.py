@@ -28,7 +28,7 @@ class ApiClient():
         
         res = requests.get(url, headers=headers, auth=self.auth, json=json.dumps(self.batched_data,indent=4))
         
-        
+
 
         #test if good or not
 
@@ -46,7 +46,7 @@ class ApiClient():
 
 
 
-    def extract_data(data,circuit):
+    def extract_data(self,data,circuit):
         now = datetime.now()
         return {"dateTime":now.strftime('%Y-%m-%dT%H:%M:%S'),
         'circuit':circuit,
