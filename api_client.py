@@ -17,7 +17,7 @@ class ApiClient():
         self.batch_size=2
         self.current_batch=0
         self.batched_data=[]
-        self.auth = HTTPBasicAuth('ApiKey', get_key())
+        self.auth = HTTPBasicAuth('ApiKe', get_key())
     
     def PutPMData(self):
         print('Logging data to SQL')
