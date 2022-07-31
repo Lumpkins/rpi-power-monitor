@@ -396,8 +396,8 @@ def rebuild_waves(samples, PHASECAL_1, PHASECAL_2):#, PHASECAL_3, PHASECAL_4, PH
     return rebuilt_waves
 
 
-def run_main(print=False):
-    print("Runn")
+def run_main(print_output=False):
+    print_output("Runn")
     logger.info("... Starting Raspberry Pi Power Monitor")
     logger.info("Press Ctrl-c to quit...")
 
@@ -534,7 +534,7 @@ def run_main(print=False):
                 }
 
                 api.PutPMData(results)
-                if(print):
+                if(print_output):
                     print_results(results)
 
                 solar_power_values = dict(power=[], pf=[], current=[])
