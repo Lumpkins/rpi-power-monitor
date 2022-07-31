@@ -27,7 +27,8 @@ class ApiClient():
         'User-Agent':'rpi-power-monitor',
         'Connection':'keep-alive',
         'Content-Type':'application/json',
-        'Host':'www.homeap.net'}
+        'Accept-Encoding':'gzip, deflate, br',
+        'Host':'www.homeapi.net'}
         
         json_str=json.dumps(self.batched_data,indent=4)
         print(json_str)
