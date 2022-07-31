@@ -26,8 +26,12 @@ class ApiClient():
         headers = {'Accept': 'application/json',
         'HostName':'www.homeapi.net'}
         
-        res = requests.get(url, headers=headers, auth=self.auth, json=json.dumps(self.batched_data,indent=4))
-        
+        json_str=json.dumps(self.batched_data,indent=4)
+
+        print(json_str)
+
+        res = requests.get(url, headers=headers, auth=self.auth, json=json_str)
+        print(res.content)
 
 
         #test if good or not
