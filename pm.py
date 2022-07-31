@@ -340,7 +340,7 @@ def calculate_power(samples, board_voltage):
 
     return results
 
-def rebuild_waves(samples, PHASECAL_1, PHASECAL_2, PHASECAL_3, PHASECAL_4, PHASECAL_5, PHASECAL_6):
+def rebuild_waves(samples, PHASECAL_1, PHASECAL_2):#, PHASECAL_3, PHASECAL_4, PHASECAL_5, PHASECAL_6
 
     # The following empty lists will hold the phase corrected voltage wave that corresponds to each individual CT sensor.
     wave_1 = []
@@ -565,11 +565,11 @@ def run_main(print=False):
             sys.exit()
 
 def print_results(results):
-        t = PrettyTable(['', 'ct1', 'ct2'])#, 'ct3', 'ct4', 'ct5', 'ct6'])
-        t.add_row(['Watts', round(results['ct1']['power'], 3), round(results['ct2']['power'], 3))#, round(results['ct3']['power'], 3), round(results['ct4']['power'], 3), round(results['ct5']['power'], 3), round(results['ct6']['power'], 3)])
-        t.add_row(['Current', round(results['ct1']['current'], 3), round(results['ct2']['current'], 3))#, round(results['ct3']['current'], 3), round(results['ct4']['current'], 3), round(results['ct5']['current'], 3), round(results['ct6']['current'], 3)])
-        t.add_row(['P.F.', round(results['ct1']['pf'], 3), round(results['ct2']['pf'], 3))#, round(results['ct3']['pf'], 3), round(results['ct4']['pf'], 3), round(results['ct5']['pf'], 3), round(results['ct6']['pf'], 3)])
-        t.add_row(['Voltage', round(results['voltage'], 3), ''])#, '', '', '', ''])
+    t = PrettyTable(['', 'ct1', 'ct2'])#, 'ct3', 'ct4', 'ct5', 'ct6'])
+    t.add_row(['Watts', round(results['ct1']['power'], 3), round(results['ct2']['power'], 3)])#, round(results['ct3']['power'], 3), round(results['ct4']['power'], 3), round(results['ct5']['power'], 3), round(results['ct6']['power'], 3)])
+    t.add_row(['Current', round(results['ct1']['current'], 3), round(results['ct2']['current'], 3)])#, round(results['ct3']['current'], 3), round(results['ct4']['current'], 3), round(results['ct5']['current'], 3), round(results['ct6']['current'], 3)])
+    t.add_row(['P.F.', round(results['ct1']['pf'], 3), round(results['ct2']['pf'], 3)])#, round(results['ct3']['pf'], 3), round(results['ct4']['pf'], 3), round(results['ct5']['pf'], 3), round(results['ct6']['pf'], 3)])
+    t.add_row(['Voltage', round(results['voltage'], 3), ''])#, '', '', '', ''])
     s = t.get_string()
 
     print(t)
