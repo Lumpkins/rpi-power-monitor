@@ -533,7 +533,7 @@ def run_main(print_output=False):
                 # 'ct6':ct2_dict
                 }
 
-                api.PutPMData(results)
+                api.AddBatch(results)
                 if(print_output):
                     print_results(results)
 
