@@ -6,7 +6,7 @@ import json
 
 def get_key():
     with open("../conn.txt") as f:
-        return f.readlines()[0]
+        return f.readlines()[0].strip()
     
 
 class ApiClient():
