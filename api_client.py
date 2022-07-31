@@ -14,7 +14,7 @@ class ApiClient():
 
     def __init__(self) -> None:
         self.ApiKey=get_key()
-        self.batch_size=2
+        self.batch_size=10
         self.current_batch=0
         self.batched_data=[]
         self.auth = ('ApiKey', self.ApiKey)#HTTPBasicAuth
@@ -33,7 +33,7 @@ class ApiClient():
         'Host':'www.homeapi.net'}
         
         json_str=json.dumps(self.batched_data,indent=4)
-        print(json_str)
+        #print(json_str)
 
         res = requests.put(url, headers=headers, auth=self.auth, json=self.batched_data)
         print(res.content)
