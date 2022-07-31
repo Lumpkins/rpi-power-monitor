@@ -17,8 +17,9 @@ class ApiClient():
         self.batch_size=2
         self.current_batch=0
         self.batched_data=[]
-        self.auth = ('ApiKey', get_key())#HTTPBasicAuth
-    
+        self.auth = ('ApiKey', self.ApiKey)#HTTPBasicAuth
+
+
     def PutPMData(self):
         print('Logging data to SQL')
 
@@ -28,6 +29,7 @@ class ApiClient():
         'Connection':'keep-alive',
         'Content-Type':'application/json',
         'Accept-Encoding':'gzip, deflate, br',
+        'ApiKey':self.ApiKey,
         'Host':'www.homeapi.net'}
         
         json_str=json.dumps(self.batched_data,indent=4)
