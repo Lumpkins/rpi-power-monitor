@@ -28,7 +28,7 @@ class ApiClient():
         
         json_str=json.dumps(self.batched_data,indent=4)
 
-        res = requests.put(url, headers=headers, auth=self.auth, data=self.batched_data)
+        res = requests.put(url, headers=headers, auth=self.auth, json=json_str)
         print(res.content)
 
 
