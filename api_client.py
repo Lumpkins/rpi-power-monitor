@@ -23,7 +23,10 @@ class ApiClient():
         print('Logging data to SQL')
 
         url = r'http://192.168.1.201/PM/Put'
-        headers = {'Accept': 'application/json',
+        headers = {'Accept': '*/*',
+        'User-Agent':'rpi-power-monitor',
+        'Connection':'keep-alive',
+        'Content-Type':'application/json',
         'Host':'www.homeapi.net'}
         
         json_str=json.dumps(self.batched_data,indent=4)
