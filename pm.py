@@ -617,7 +617,7 @@ if __name__ == '__main__':
     if not MODE or MODE=="print":
         # Try to establish a connection to the DB for 5 seconds:
         if(MODE=="print"):
-            run_main(true)
+            run_main(True)
         else:
             run_main()
 
