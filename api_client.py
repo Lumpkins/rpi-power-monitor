@@ -14,7 +14,7 @@ class ApiClient():
 
     def __init__(self) -> None:
         self.ApiKey=get_key()
-        self.batch_size=10
+        self.batch_size=2
         self.current_batch=0
         self.batched_data=[]
         self.auth = HTTPBasicAuth('ApiKey', get_key())
