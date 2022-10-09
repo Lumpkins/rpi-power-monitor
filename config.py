@@ -34,7 +34,7 @@ ct6_channel = 1              # Green Pair
 ct_phase_correction = {
     'ct1' : 1.04564589,
     'ct2' : 1.13240952,
-    'ct3' : 1,
+    'ct3' : 1.271,
     'ct4' : 1,
     'ct5' : 1,
     'ct6' : 1,
