@@ -398,7 +398,7 @@ def rebuild_waves(samples, PHASECAL_1, PHASECAL_2, PHASECAL_3, PHASECAL_4):#, PH
 
 
 def run_main(print_output=False):
-    print("Runn")
+    
     logger.info("... Starting Raspberry Pi Power Monitor")
     logger.info("Press Ctrl-c to quit...")
 
@@ -534,9 +534,11 @@ def run_main(print_output=False):
                 # 'ct6':ct2_dict
                 }
 
-                api.AddBatch(results)
+                
                 if(print_output):
                     print_results(results)
+                else:
+                    api.AddBatch(results)
 
                 solar_power_values = dict(power=[], pf=[], current=[])
                 home_load_values = dict(power=[], pf=[], current=[])
@@ -558,8 +560,10 @@ def run_main(print_output=False):
                 #     t.add_row(['Voltage', round(results['voltage'], 3), ''])#, '', '', '', ''])
                 #     s = t.get_string()
                 #     logger.debug('\n' + s)
-
-                sleep(60)
+                if(print_output):
+                    sleep(5)
+                else:
+                    sleep(60)
 
         except KeyboardInterrupt:
             
