@@ -430,7 +430,7 @@ def run_main(print_output=False):
             # ct5_samples = samples['ct5']
             # ct6_samples = samples['ct6']
             v_samples = samples['voltage']
-            rebuilt_waves = rebuild_waves(samples, ct1_phasecal, ct2_phasecal)#, ct3_phasecal, ct4_phasecal, ct5_phasecal, ct6_phasecal)
+            rebuilt_waves = rebuild_waves(samples, ct1_phasecal, ct2_phasecal, ct3_phasecal, ct4_phasecal)#, ct5_phasecal, ct6_phasecal)
             results = calculate_power(rebuilt_waves, board_voltage) 
 
             # # RMS calculation for phase correction only - this is not needed after everything is tuned. The following code is used to compare the RMS power to the calculated real power. 
