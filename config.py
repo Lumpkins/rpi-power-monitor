@@ -23,9 +23,9 @@ AC_TRANSFORMER_OUTPUT_VOLTAGE = 8.64
 ct1_channel = 6            # 3.5mm Input #1  
 
 ct2_channel = 7             # 3.5mm Input #2           
-ct3_channel = 2             # Blue Pair             
+ct3_channel =4              # Orange Pair          
 ct4_channel = 3             # Brown Pair           
-ct5_channel = 4              # Orange Pair 
+ct5_channel = 2             # Blue Pair     
 board_voltage_channel =  0  # Board voltage ~3.3V
 v_sensor_channel = 5        # 9V AC Voltage channel
 ct6_channel = 1              # Green Pair       
