@@ -660,8 +660,8 @@ if __name__ == '__main__':
             ct2_samples = samples['ct2']
             ct3_samples = samples['ct3']
             ct4_samples = samples['ct4']
-            ct5_samples = samples['ct5']
-            ct6_samples = samples['ct6']
+            # ct5_samples = samples['ct5']
+            # ct6_samples = samples['ct6']
             v_samples = samples['voltage']
 
             # Save samples to disk
